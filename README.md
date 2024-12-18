@@ -47,7 +47,7 @@ mvn clean package
 java -jar ./target/LibraryTestApp-1.jar
 ```
 
-Проект можно открыть по ссылке [http://localhost:8080/books]()
+Проект можно открыть по ссылке [http://localhost:8080/books](http://localhost:8080/books)
 
 ## Описание основных частей проекта
 
