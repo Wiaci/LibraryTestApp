@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${book.id == null} ? 'Новая книга' : 'Книга'"></title>
+</head>
+<body>
+<div th:replace="/header :: header"></div>
+<h1 th:text="${book.id == null} ? 'Новая книга' : 'Книга'"></h1>
+<form th:action="@{/books/save}" th:method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}" />
+    <div>
+        <label for="title">Название</label>
+        <input type="text" id="title" th:field="*{title}"/>
+    </div>
+    <div>
+        <label for="author">Автор</label>
+        <input type="text" id="author" th:field="*{author}" />
+    </div>
+    <div>
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" th:field="*{isbn}" />
+    </div>
+    <button type="submit" th:text="${book.id == null} ? 'Добавить' : 'Сохранить'"></button>
+</form>
+</body>
+</html>

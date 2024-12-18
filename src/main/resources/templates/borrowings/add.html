@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Новый заказ</title>
+    <script src="/search.js"></script>
+</head>
+<body>
+<div th:replace="/header :: header"></div>
+<h1>Новый заказ</h1>
+<form th:action="@{/borrowings/save}" th:method="post" th:object="${borrowing}">
+    <div>
+        <label for="bookFilter">Найти книгу</label>
+        <input id="bookFilter" type="text" onkeyup="searchBooks()" placeholder="Введите название книги">
+        <label for="book">Книга</label>
+        <select id="book" th:field="*{book.id}"></select>
+    </div>
+
+    <div>
+        <label for="clientFilter">Найти клиента</label>
+        <input id="clientFilter" type="text" onkeyup="searchClients()" placeholder="Введите имя клиента">
+        <label for="client">Клиент</label>
+        <select id="client" th:field="*{client.id}"></select>
+    </div>
+    <div>
+        <label for="borrowDate">Дата взятия книги</label>
+        <input id="borrowDate" type="date" th:field="*{borrowDate}"/>
+    </div>
+    <button type="submit">Создать</button>
+</form>
+</body>
+</html>

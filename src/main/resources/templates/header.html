@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${client.id == null} ? 'Новый клиент' : 'Клиент'"></title>
+</head>
+<body>
+<header>
+  <a th:href="@{/books}">Книги</a>
+  <a th:href="@{/clients}">Клиенты</a>
+  <a th:href="@{/borrowings}">Заказы</a> |
+  <a th:href="@{/api/borrowings}">JSON заказов</a> |
+  <a th:href="@{/api/generate-test}">Сгенерировать тестовые данные</a>
+</header>
+</body>
+</html>
